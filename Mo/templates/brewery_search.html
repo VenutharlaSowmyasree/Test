@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-image: url('./static/search.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 80vh; /* Maximum height of the container */
+            overflow-y: auto; /* Enable vertical scroll if content exceeds container height */
+        }
+
+        form, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px; /* Add margin at the bottom of the form */
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Brewery Info Page</h1>
+        <!-- <h2>Search Breweries</h2> -->
+        <form method="POST">
+            <select name="search_type">
+                <option value="by_city">By City</option>
+                <option value="by_name">By Name</option>
+                <option value="by_type">By Type</option>
+            </select>
+            <input type="text" name="search_query" placeholder="Enter your search query">
+            <button type="submit">Search</button>
+        </form>
+        
+        <h2>Search Results</h2>
+        <ul>
+            {% for brewery in breweries %}
+                <li>
+                    <p><strong>Name: {{ brewery.name }}</strong></p>
+                    <p><strong>Address:</strong> {{ brewery.address_1 }}, {{ brewery.address_2 }}</p>
+                    <p><strong>Phone:</strong> {{ brewery.phone }}</p>
+                    <p><strong>Website:</strong> <a href="{{ brewery.website_url }}" target="_blank">Click here for Website</a></p>
+                    <p><strong> Ratings: {{ brewery.rating }}</strong></p>
+                    <p><strong>Description: {{ brewery.description }}</strong></p>
+                    <p><strong>State:</strong> {{ brewery.state }}</p>
+                    <p><strong>City:</strong> {{ brewery.city }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
+    </ul>
+</body>
+</html>

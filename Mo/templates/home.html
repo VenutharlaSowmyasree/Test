@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Space between top and bottom content */
+            align-items: center; /* Center items horizontally */
+            height: 100vh;
+            margin: 0;
+            background-image: url('./static/home.jpg'); /* Replace 'your-background-image.jpg' with your actual image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px; /* Add padding to create space around the content */
+        }
+        .heading {
+            margin-bottom: 20px;
+            font-weight: bold; /* Make the heading bold */
+            font-size: 24px; /* Increase the font size of the heading */
+            color: #fff; /* Change the text color of the heading */
+            text-decoration: underline; /* Add underline decoration to the heading */
+            text-align: center; /* Center the heading */
+        }
+        .links {
+            display: flex;
+            flex-direction: column; /* Stack links vertically */
+            align-items: center; /* Center links horizontally */
+            margin-bottom: 20px;
+        }
+        .links a {
+            margin-bottom: 10px; /* Add space between links */
+            text-decoration: none;
+            color: #fff; /* Change the text color of the links */
+            font-weight: bold; /* Make the links bold */
+            font-size: 20px; /* Increase the font size of the links */
+            border-bottom: 2px solid transparent; /* Add border-bottom for decoration */
+            transition: border-bottom-color 0.3s ease; /* Smooth transition for the border color */
+        }
+        .links a:last-child {
+            margin-bottom: 0; /* Remove margin from the last link */
+        }
+        .links a:hover {
+            border-bottom-color: #fff; /* Change the border color on hover */
+        }
+        .content {
+            text-align: center; /* Align content to the center */
+            color: #fff; /* Change the text color of the content */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">BREWERIES PAGE</h1>
+        <div class="links">
+            <a href="./brewery-search">Search Breweries</a>
+            <a href="/review">Add Review</a>
+        </div>
+    </div>
+</body>
+</html>
+
